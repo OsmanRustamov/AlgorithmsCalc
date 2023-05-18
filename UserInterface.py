@@ -104,6 +104,7 @@ class MainWindow(QWidget):
             self.func3.hide()
             self.z_label.show()
             self.z_text.show()
+            self.calculate_button.clicked.connect(self.get_linear_algorithm_result)
 
     def set_branching(self):
         self.change_algorithm = True

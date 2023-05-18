@@ -12,13 +12,16 @@ class Algorithms():
         elif func == "sqr(x)":
             return x**2
 
+    def ch(self, x):
+        return (math.e**x + math.e**(-x)) / 2
+
     def branching_algorithm(self, x: float, y: float, func: str) -> float:
-        if x * y > 5 and x * y < 0.5:
-            return math.e**self.f(func, x) - abs(y)
-        elif x * y > 0.5 and x * y < 0.1:
-            return abs(self.f(func, x) + y)**0.5
+        if x * y < 5:
+            return self.f(func, x)**3 + math.sin(y)
+        elif x * y > 7:
+            return self.ch(self.f(func, x)**3) + y**2
         else:
-            return 2 * self.f(func, x)**2
+            return math.cos(x + self.f(func, x)**3)
 
 if __name__ == "__main__":
     res = Algorithms()
