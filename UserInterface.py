@@ -70,8 +70,8 @@ class MainWindow(QWidget):
             z = float(self.z_text.text())
 
             result = Algorithms()
-
-            self.result_label.setText("Результат: " + str(result.linear_algoritm(x, y, z)))
+            print(result.linear_algorithm(x, y, z))
+            self.result_label.setText("Результат: " + str(result.linear_algorithm(x, y, z)))
         except ValueError:
             self.result_label.setText("Введите переменные")
 
@@ -80,8 +80,8 @@ class MainWindow(QWidget):
             x = float(self.x_text.text())
             y = float(self.y_text.text())
             f = self.on_func_clicked()
-
             result = Algorithms()
+            print(result.branching_algorithm(x, y, f))
             self.result_label.setText("Результат: " + str(result.branching_algorithm(x, y, f)))
         except ValueError:
             self.result_label.setText("Введите переменные")
